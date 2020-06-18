@@ -13,4 +13,3 @@ window.addEventListener('scroll', () => {
   city.style.top = `${valueY * 0.3}px`;
   text.style.top = `${valueY * 0.6}px`;
 });
-

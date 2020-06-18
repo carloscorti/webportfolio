@@ -1,7 +1,4 @@
-// import jQuery from 'jquery';
-
 (function ($) {
-// function App ($) {
 
 	"use strict";
 	var nav = $('nav');
@@ -98,6 +95,3 @@
 		$('#cursor.waiting').css({"top": `${e.pageY}px`, "left": `${e.pageX}px`});
 	})
 })(jQuery);
-// }
-
-// App(jQuery());

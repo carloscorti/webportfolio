@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  background: #171718; 
+  min-height: 1500px;
+}
+
+section.parralax{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.parralax::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #171718, transparent);
+  z-index: 10000;
+}
+
+/* section.parralax::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #171718;
+  z-index: 10000;
+  mix-blend-mode: color;
+} */
+
+section.parralax img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+section.parralax > div#text {
+  padding-top: 10vh;
+  padding-left: 12vw;
+  align-self: flex-start;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  position: relative;
+  color: #fff;
+  text-align: left;
+  z-index: 2;
+}
+
+@media (max-width: 450px) {
+  section.parralax > div#text {
+    padding-left: 5vw;
+  }
+}
+
+@media (max-width: 850px) and (orientation: landscape) {
+  section.parralax > div#text{
+    padding-top: 20vh;
+    z-index: 4;
+  }
+}
+
+section.parralax > div#text > h2{
+  text-shadow: 0 0 1px #202425, 0px 0px 5px #000000;
+  font-weight: bold;
+  font-size: 6em;
+  line-height: 1em;
+  width: 25%;
+  color: #fff;
+
+}
+
+@media (max-width: 450px) {
+  section.parralax > div#text > h2 {
+    font-size: 4em;
+  }
+}
+
+@media (max-width: 780px) {
+  section.parralax > div#text > h2 {
+    font-size: 4.5em;
+  }
+}
+
+section.parralax > div#text > p {
+  text-shadow: 0 0 1px #202425, 0px 0px 5px #000000;
+  line-height: 1em;
+  font-size: 2.5em;
+  width: 50%;
+  padding-left: 1vw;
+
+}
+
+@media (max-width: 450px) {
+  section.parralax > div#text > p {
+    font-size: 1.5em;
+    padding-left: 2vw;
+  }
+}
+
+@media (max-width: 850px) and (orientation: landscape) {
+  section.parralax > div#text > p {
+    width: 100%;
+  }
+}
+
+#city{
+  filter: sepia(1);
+  z-index: 3;
+}
+
+#cloud{
+  filter: sepia(1) blur(0.75px);
+  z-index: 2;
+}
+
+#centralthunder {
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+#bgthunder{
+  filter: drop-shadow(2px 4px 6px black);
+  z-index: 1;
+}

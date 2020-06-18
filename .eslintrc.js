@@ -7,7 +7,7 @@ module.exports = {
     node: true,
     jest: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: ['eslint:recommended'],
   parserOptions: {
     ecmaFeatures: {
       experimentalObjectRestSpread: true,
@@ -15,11 +15,7 @@ module.exports = {
     },
     sourceType: 'module',
   },
-  plugins: ['react'],
   rules: {
-    'react/prop-types': ['off'],
-    'react/display-name': ['off'],
-    'react/no-unescaped-entities': ['off'],
     indent: ['error', 2, { SwitchCase: 1 }],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],

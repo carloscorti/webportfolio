@@ -1,7 +1,3 @@
-// import express from 'express';
-// import config from '../config';
-// import path from 'path';
-
 const express = require('express');
 const config = require('./config/config');
 const path = require('path');
@@ -35,11 +31,11 @@ app.set('views', path.join('./', 'views'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.render('index', {
+  res.render('indexPublic', {
     title: 'Carlos Corti',
     profile: 'Fullstack Developer',
     email: 'carlosportfoliodev@gmail.com',
-    phone: '+34 667190358'
+    phone: '+34 667190358',
   });
 });
 
