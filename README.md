@@ -11,7 +11,7 @@ Open http://localhost:8080 to view it in the browser.
 The page will reload if you make edits.
 You will also see any lint errors in the console.
 
-DEPLOYMENT (follow the order below)
+PRODUCTION (follow the order below)
 1- npm run build-webpack / yarn build-webpack
 Builds the app for production to the ./public/build folder.
 The build is minified and the filenames include the hashes.

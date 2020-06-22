@@ -8,12 +8,13 @@
     "npm": "6.14.4"
   },
   "scripts": {
+    "start": "npm run build-webpack && npm run build-node && npm run start-prod",
     "dev": "nodemon --exec babel-node lib/server.js",
     "webpack": "webpack -wd",
     "build-webpack": "webpack -p",
     "build-node": "babel lib -d build --copy-files",
     "start-windows-prod": "set NODE_ENV=production&&pm2 start build/server.js -i max --name appProd",
-    "start": "NODE_ENV=production pm2 start build/server.js -i max --name appProd",
+    "start-prod": "NODE_ENV=production pm2 start build/server.js -i max --name appProd",
     "prod-stop": "pm2 stop all",
     "prod-kill": "pm2 delete all"
   },
