@@ -11,7 +11,8 @@ module.exports = {
   plugins: [
     new AssetsPlugin({
       filename: 'assets.json',
-      path: path.resolve(__dirname, 'lib', 'assets'),
+      // path: path.resolve(__dirname, 'lib', 'assets'),
+      path: path.resolve(__dirname, 'public', 'build'),
     }),
     new CleanWebpackPlugin(),
     new MiniCssExtraxtPlugin({
