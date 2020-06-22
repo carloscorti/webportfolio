@@ -331,8 +331,8 @@ a:hover {
   width: 44px;
   height: 44px;
   text-align: center;
-  line-height: 1;
-  font-size: 16px;
+  line-height: 1.65;
+  font-size: 1.6em;
   border-radius: 50%;
   right: 15px;
   bottom: 15px;
@@ -1310,7 +1310,7 @@ footer .credits a {
   z-index: 1000000;
 }
 
-#contact.waiting * {
+body.waiting * {
   cursor: none;
 }
 

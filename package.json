@@ -4,10 +4,14 @@
   "private": "true",
   "license": "MIT",
   "scripts": {
-    "dev2": "nodemon --exec babel-node server.js",
     "dev": "nodemon --exec babel-node lib/server.js",
     "webpack": "webpack -wd",
-    "build-webpack": "webpack -p"
+    "build-webpack": "webpack -p",
+    "build-node": "babel lib -d build --copy-files",
+    "start-windows-prod": "set NODE_ENV=production&&pm2 start build/server.js -i max --name appProd",
+    "start-prod": "NODE_ENV=production pm2 start build/server.js -i max --name appProd",
+    "prod-stop": "pm2 stop all",
+    "prod-kill": "pm2 delete all"
   },
   "babel": {
     "presets": [
@@ -29,15 +33,20 @@
     "body-parser": "^1.19.0",
     "bootstrap": "4.1.3",
     "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
     "ejs": "^3.1.3",
     "express": "^4.17.1",
-    "font-awesome": "4.7.0",
+    "file-loader": "^6.0.0",
     "ionicons": "2.0.1",
     "jquery": "^3.5.1",
     "jquery.easing": "1.4.1",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.14.1",
     "nodemailer": "^6.4.8",
     "pm2": "^4.4.0",
     "popper.js": "^1.16.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
     "toastr": "^2.1.4",
     "webpack": "^4.43.0"
   },

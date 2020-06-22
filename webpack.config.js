@@ -1,48 +1,54 @@
 const path = require('path');
 const AssetsPlugin = require('assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const webpack = require('webpack');
+const MiniCssExtraxtPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    // vendor: './lib/app/vendor.js',
     main: './lib/app/js/main.js',
   },
-
-  output: {
-    path: path.resolve(__dirname, 'public', 'build'),
-    filename: '[name].[contentHash].js',
-  },
-
-  // module: {
-  //   rules: [
-  //     {
-  //       test: /\.js$/,
-  //       exclude: /node_modules/,
-  //       use: {
-  //         loader: 'babel-loader',
-  //         options: {
-  //           presets: ['react', 'env', 'stage-2'],
-  //         },
-  //       },
-  //     },
-  //   ],
-  // },
 
   plugins: [
     new AssetsPlugin({
       filename: 'assets.json',
-      path: path.join(__dirname, 'lib', 'assets'),
+      path: path.resolve(__dirname, 'lib', 'assets'),
     }),
     new CleanWebpackPlugin(),
+    new MiniCssExtraxtPlugin({
+      filename: 'css-[name].[contentHash].css',
+    }),
   ],
+
+  output: {
+    path: path.resolve(__dirname, 'public', 'build'),
+    filename: 'js-[name].[contentHash].js',
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.(sass|scss|css)$/,
+        use: [MiniCssExtraxtPlugin.loader, 'css-loader', 'sass-loader'],
+      },
+
+      {
+        test: /\.(svg|eot|woff|woff2|ttf)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: '/fonts/',
+          publicPath: '/build/fonts/',
+        },
+      },
+    ],
+  },
 
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendor: {
           test: /[\\/]node_modules[\\/]/,
-          chunks: 'initial',
+          chunks: 'all',
           name: 'vendor',
           enforce: true,
         },
