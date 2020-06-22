@@ -8,7 +8,8 @@
     "npm": "6.14.4"
   },
   "scripts": {
-    "start": "npm run build-webpack && npm run build-node && npm run start-prod",
+    "heroku-postbuild": "npm run build-webpack && npm run build-node",
+    "start": "npm run start-prod",
     "dev": "nodemon --exec babel-node lib/server.js",
     "webpack": "webpack -wd",
     "build-webpack": "webpack -p",
